@@ -96,6 +96,7 @@
 
 <style lang="stylus" rel="stylesheet/stylus" type="text/stylus" scoped>
   .component {
+    height 300px
     color: red;
     background-color #000
   }

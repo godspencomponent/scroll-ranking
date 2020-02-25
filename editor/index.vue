@@ -30,10 +30,11 @@
             <template slot-scope="scope">
               <el-button
                 size="mini"
+                type="text"
                 @click="handleAdd(scope.$index, scope.row)">新增</el-button>
               <el-button
                 size="mini"
-                type="danger"
+                type="text"
                 @click="handleDelete(scope.$index, scope.row)">删除</el-button>
             </template>
           </el-table-column>
