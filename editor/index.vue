@@ -107,7 +107,7 @@
     },
     computed: {
       data2 () {
-        return componentInfo.data
+        return this.componentInfo.data
       }
     },
     watch: {
