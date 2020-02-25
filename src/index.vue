@@ -7,9 +7,9 @@
 <script type="text/ecmascript-6">
   import {VueExtend} from 'godspen-lib'
   import { scrollRankingBoard } from '@jiaminghi/data-view'
-
-import Vue from 'vue'
-Vue.use(scrollRankingBoard)
+  import Vue from 'vue'
+  Vue.use(scrollRankingBoard)
+  
   export default {
     mixins: [VueExtend.mixin],
     name: 'scroll-ranking',

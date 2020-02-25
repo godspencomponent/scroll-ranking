@@ -82,7 +82,7 @@ let config = {
         options: {
           presets: ['es2015']
         },
-        include: [path.resolve(__dirname, 'src'), path.resolve(__dirname, './preview'), path.resolve(__dirname, 'node_modules/@jiaminghi/data-view/lib')],
+        include: [path.resolve(__dirname, 'src'), path.resolve(__dirname, './preview'), path.resolve(__dirname, 'node_modules/@jiaminghi/data-view')],
         // exclude: /node_modules/
       },
       {
