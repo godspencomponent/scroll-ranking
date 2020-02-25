@@ -1,12 +1,15 @@
 <template>
   <div class="component">
-    <dv-scroll-ranking-board :config="config" style="width:320px;height:300px" />
+    <dv-scroll-ranking-board :config="config" style="width:320px;height:301px"/>
   </div>
 </template>
 
-<script>
+<script type="text/ecmascript-6">
   import {VueExtend} from 'godspen-lib'
+  import { scrollRankingBoard } from '@jiaminghi/data-view'
 
+import Vue from 'vue'
+Vue.use(scrollRankingBoard)
   export default {
     mixins: [VueExtend.mixin],
     name: 'scroll-ranking',

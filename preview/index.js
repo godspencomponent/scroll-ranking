@@ -5,9 +5,7 @@ import App from './app'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import AttrComponent from './attr'
-import { scrollRankingBoard } from '@jiaminghi/data-view'
 
-Vue.use(scrollRankingBoard)
 Vue.use(ElementUI)
 Vue.use(AttrComponent)
 

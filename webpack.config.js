@@ -79,7 +79,11 @@ let config = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /node_modules/
+        options: {
+          presets: ['es2015']
+        },
+        include: [path.resolve(__dirname, 'src'), path.resolve(__dirname, './preview'), path.resolve(__dirname, 'node_modules/@jiaminghi/data-view/lib')],
+        // exclude: /node_modules/
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
