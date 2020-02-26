@@ -1,6 +1,6 @@
 <template>
   <div class="component">
-    <component v-if="componentName" :is="componentName" :config="config" style="width:320px;height:301px"></component>
+    <component v-if="componentName" :is="componentName" :config="config"></component>
   </div>
 </template>
 
@@ -9,7 +9,7 @@
   // import  {scrollRankingBoard}  from '@jiaminghi/data-view'
   // import Vue from 'vue'
   // Vue.use(scrollRankingBoard)
-  
+
   export default {
     mixins: [VueExtend.mixin],
     name: 'scroll-ranking',
@@ -112,8 +112,8 @@
 
 <style lang="stylus" rel="stylesheet/stylus" type="text/stylus" scoped>
   .component {
-    height 300px
-    color: red;
-    background-color #000
+    height: 100%;
+    width: 100%;
+    background-color: #000;
   }
 </style>

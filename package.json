@@ -2,7 +2,7 @@
   "name": "scroll-ranking",
   "namespace": "Luffy",
   "label": "scroll-ranking",
-  "version": "1.2.9",
+  "version": "1.2.10",
   "description": "排名轮播表",
   "private": true,
   "keywords": [],
