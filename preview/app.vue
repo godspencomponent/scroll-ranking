@@ -117,6 +117,10 @@
             {
               name: '驻马店',
               value: 66
+            },
+            {
+              name: '上海',
+              value: 66
             }
           ],
           rowNum: 3,

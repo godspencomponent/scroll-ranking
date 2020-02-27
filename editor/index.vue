@@ -85,7 +85,7 @@
         type: [Object],
         default () {
           return {
-            rowNum: 5,
+            rowNum: 3,
             waitTime: 2000,
             carousel: 'single',
             unit: null,
