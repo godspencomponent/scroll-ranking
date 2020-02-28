@@ -6,10 +6,6 @@
 
 <script type="text/ecmascript-6">
   import {VueExtend, Util} from 'godspen-lib'
-  // import  {scrollRankingBoard}  from '@jiaminghi/data-view'
-  // import Vue from 'vue'
-  // Vue.use(scrollRankingBoard)
-
   export default {
     mixins: [VueExtend.mixin],
     name: 'scroll-ranking',
@@ -89,7 +85,7 @@
       await Util.loadJs('https://unpkg.com/@jiaminghi/data-view@2.7.3/dist/datav.min.vue.js')
       setTimeout((e) => {
         this.componentName = 'DvScrollRankingBoard'
-      }, 500)
+      }, 100)
     },
     computed: {
       config () {
@@ -114,6 +110,5 @@
   .component {
     height: 100%;
     width: 100%;
-    background-color #000
   }
 </style>

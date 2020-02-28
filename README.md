@@ -1,2 +1,2 @@
-写点组件使用说明吧
 # scroll-ranking
+使用了dataV 
