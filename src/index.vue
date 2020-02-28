@@ -50,7 +50,7 @@
       },
       rowNum: {
         type: Number,
-        default: 5,
+        default: 3,
         editor: {
           ignore: true
         }
@@ -114,5 +114,6 @@
   .component {
     height: 100%;
     width: 100%;
+    background-color #000
   }
 </style>
