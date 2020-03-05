@@ -45,28 +45,37 @@
           <span>基础配置</span>
         </div>
         <el-form ref="form" label-width="80px" label-position='right' size='mini'>
-          <el-form-item label="轮播方式:" label-width="100px">
-            <el-select v-model="componentInfo.carousel" placeholder="请选择">
-              <el-option
-                v-for="item in options"
-                :key="item.value"
-                :label="item.label"
-                :value="item.value">
-              </el-option>
-            </el-select>
-          </el-form-item>
+          <el-row>
+            <el-col :span='12'>
+              <el-form-item label="轮播方式:" label-width="100px">
+                <el-select v-model="componentInfo.info.carousel" placeholder="请选择">
+                  <el-option
+                    v-for="item in options"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value">
+                  </el-option>
+                </el-select>
+              </el-form-item>
+            </el-col>
+            <el-col :span='12'>
+              <el-form-item label="字体颜色:" label-width="150px">
+                <el-color-picker v-model="componentInfo.info.fontColor" show-alpha></el-color-picker>
+              </el-form-item>
+            </el-col>
+          </el-row>
           <el-form-item label="可见行数:" label-width="100px">
-            <el-input v-model.number="componentInfo.rowNum" type='number'></el-input>
+            <el-input v-model.number="componentInfo.info.rowNum" type='number'></el-input>
           </el-form-item>
           <el-form-item label="轮播时间间隔(ms):" label-width="140px">
-            <el-input v-model.number="componentInfo.waitTime" type='number'></el-input>
+            <el-input v-model.number="componentInfo.info.waitTime" type='number'></el-input>
           </el-form-item>
           <el-form-item label="数值单位:" label-width="100px">
-            <el-input v-model="componentInfo.unit"></el-input>
+            <el-input v-model="componentInfo.info.unit"></el-input>
           </el-form-item>
           <el-form-item label="自动排序:" label-width="100px">
             <el-switch
-              v-model="componentInfo.sort"
+              v-model="componentInfo.info.sort"
               active-color="#13ce66"
               inactive-color="#ff4949">
             </el-switch>
@@ -89,6 +98,7 @@
             waitTime: 2000,
             carousel: 'single',
             unit: null,
+            fontColor: '',
             sort: true
           }
         }
@@ -115,9 +125,9 @@
         handler (v) {
           if (v && v.length != 0) {
             // data变化不引起视图改变，改变其他属性实现
-            this.componentInfo.sort = !this.componentInfo.sort
+            this.componentInfo.info.sort = !this.componentInfo.info.sort
             this.$nextTick(_ => {
-              this.componentInfo.sort = !this.componentInfo.sort
+              this.componentInfo.info.sort = !this.componentInfo.info.sort
             })
           }
         },

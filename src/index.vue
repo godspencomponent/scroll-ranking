@@ -1,6 +1,6 @@
 <template>
   <div class="component">
-    <component v-if="componentName" :is="componentName" :config="config"></component>
+    <component v-if="componentName" :is="componentName" :config="config" :style="{color: info.fontColor}"></component>
   </div>
 </template>
 
@@ -44,41 +44,22 @@
           ignore: true
         }
       },
-      rowNum: {
-        type: Number,
-        default: 3,
+      info: {
+        type: Object,
+        default () {
+          return {
+            rowNum: 3,
+            waitTime: 2000,
+            carousel: 'single',
+            unit: '',
+            sort: true,
+            fontColor: '#000'
+          }
+        },
         editor: {
           ignore: true
         }
       },
-      waitTime: {
-        type: Number,
-        default: 2000,
-        editor: {
-          ignore: true
-        }
-      },
-      carousel: {
-        type: String,
-        default: 'single',
-        editor: {
-          ignore: true
-        }
-      },
-      unit: {
-        type: String,
-        default: '',
-        editor: {
-          ignore: true
-        }
-      },
-      sort: {
-        type: Boolean,
-        default: true,
-        editor: {
-          ignore: true
-        }
-      }
     },
     mounted: async function () {
       // 纯属演示异步加载js资源，与本组件无关； loadJs返回一个promise实例 可以用async 或者 then 来处理回调
@@ -90,12 +71,8 @@
     computed: {
       config () {
         return {
+          ...this.info,
           data: this.data,
-          rowNum: this.rowNum,
-          waitTime: this.waitTime,
-          carousel: this.carousel,
-          unit: this.unit,
-          sort: this.sort,
         }
       }
     },
