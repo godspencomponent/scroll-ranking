@@ -1,6 +1,6 @@
 <template>
   <div class="component">
-    <component v-if="componentName" :is="componentName" :config="config"></component>
+    <component v-if="componentName" :is="componentName" :config="config":style="{color: fontColor}"></component>
   </div>
 </template>
 
@@ -72,6 +72,13 @@
           ignore: true
         }
       },
+      fontColor: {
+        type: String,
+        default: '#000',
+        editor: {
+          ignore: true
+        }
+      },
       sort: {
         type: Boolean,
         default: true,
@@ -94,6 +101,7 @@
           rowNum: this.rowNum,
           waitTime: this.waitTime,
           carousel: this.carousel,
+          fontColor: this.fontColor,
           unit: this.unit,
           sort: this.sort,
         }

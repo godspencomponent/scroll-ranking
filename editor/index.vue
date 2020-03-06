@@ -45,16 +45,25 @@
           <span>基础配置</span>
         </div>
         <el-form ref="form" label-width="80px" label-position='right' size='mini'>
-          <el-form-item label="轮播方式:" label-width="100px">
-            <el-select v-model="componentInfo.carousel" placeholder="请选择">
-              <el-option
-                v-for="item in options"
-                :key="item.value"
-                :label="item.label"
-                :value="item.value">
-              </el-option>
-            </el-select>
-          </el-form-item>
+         <el-row>
+           <el-col :span=12>
+              <el-form-item label="轮播方式:" label-width="100px">
+                <el-select v-model="componentInfo.carousel" placeholder="请选择">
+                  <el-option
+                    v-for="item in options"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value">
+                  </el-option>
+                </el-select>
+              </el-form-item>
+           </el-col>
+           <el-col :span=12>
+             <el-form-item label="字体颜色:" label-width="150px">
+                <el-color-picker v-model="componentInfo.fontColor" show-alpha></el-color-picker>
+              </el-form-item>
+           </el-col>
+         </el-row>
           <el-form-item label="可见行数:" label-width="100px">
             <el-input v-model.number="componentInfo.rowNum" type='number'></el-input>
           </el-form-item>
@@ -88,6 +97,7 @@
             rowNum: 3,
             waitTime: 2000,
             carousel: 'single',
+            fontColor: '#000',
             unit: null,
             sort: true
           }
