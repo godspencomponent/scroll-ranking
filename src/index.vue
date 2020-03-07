@@ -49,22 +49,6 @@
           ignore: true
         }
       },
-      info: {
-        type: Object,
-        default () {
-          return {
-            rowNum: 3,
-            waitTime: 2000,
-            carousel: 'single',
-            unit: '',
-            sort: true,
-            fontColor: '#000'
-          }
-        },
-        editor: {
-          ignore: true
-        }
-      },
       fontColor: {
         type: String,
         default: '#000',

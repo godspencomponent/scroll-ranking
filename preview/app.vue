@@ -123,23 +123,12 @@
               value: 66
             }
           ],
-<<<<<<< HEAD
-          info: {
-            rowNum: 3,
-            waitTime: 2000,
-            carousel: 'single',
-            unit: '',
-            sort: true,
-            fontColor: '#000'
-          }
-=======
           rowNum: 3,
           waitTime: 2000,
           carousel: 'single',
           fontColor: '#000',
           unit: '',
           sort: true
->>>>>>> ad9fad590195f423370b5c14351d770f2719a5f2
         },
       }
     },
