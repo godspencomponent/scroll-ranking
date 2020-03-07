@@ -1,14 +1,12 @@
 {
   "name": "scroll-ranking",
   "label": "scroll-ranking",
-<<<<<<< HEAD
-  "version": "1.3.3",
-=======
   "version": "1.3.6",
->>>>>>> ad9fad590195f423370b5c14351d770f2719a5f2
   "description": "排名轮播表",
   "type": 0,
-  "tags": [20],
+  "tags": [
+    20
+  ],
   "private": true,
   "keywords": [],
   "scripts": {

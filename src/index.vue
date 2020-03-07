@@ -1,10 +1,11 @@
 <template>
   <div class="component">
-<<<<<<< HEAD
-    <component v-if="componentName" :is="componentName" :config="config" :style="{color: info.fontColor}"></component>
-=======
-    <component v-if="componentName" :is="componentName" :config="config":style="{color: fontColor}"></component>
->>>>>>> ad9fad590195f423370b5c14351d770f2719a5f2
+    <component
+      v-if="componentName"
+      :is="componentName"
+      :config="config"
+      :style="{color: fontColor}"
+    ></component>
   </div>
 </template>
 
@@ -64,8 +65,6 @@
           ignore: true
         }
       },
-<<<<<<< HEAD
-=======
       fontColor: {
         type: String,
         default: '#000',
@@ -80,7 +79,6 @@
           ignore: true
         }
       }
->>>>>>> ad9fad590195f423370b5c14351d770f2719a5f2
     },
     mounted: async function () {
       // 纯属演示异步加载js资源，与本组件无关； loadJs返回一个promise实例 可以用async 或者 then 来处理回调
@@ -92,17 +90,13 @@
     computed: {
       config () {
         return {
-          ...this.info,
           data: this.data,
-<<<<<<< HEAD
-=======
           rowNum: this.rowNum,
           waitTime: this.waitTime,
           carousel: this.carousel,
           fontColor: this.fontColor,
           unit: this.unit,
           sort: this.sort,
->>>>>>> ad9fad590195f423370b5c14351d770f2719a5f2
         }
       }
     },
