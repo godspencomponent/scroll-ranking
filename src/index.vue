@@ -61,6 +61,9 @@
             fontColor: '#000'
           }
         },
+        editor: {
+          ignore: true
+        }
       }
     },
     mounted: async function () {
