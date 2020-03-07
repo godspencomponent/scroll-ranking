@@ -3,9 +3,20 @@
     <div>
       <el-card class="box-card">
         <div slot="header" class="clearfix">
-          <span>列表项</span>
+          <span>列表数据</span>
         </div>
-        <el-table :data="componentInfo.data" style="width: 100%">
+        <el-form ref="form" label-width="60px" size="mini">
+          <el-form-item label="使用数据源:" label-width="100px">
+            <el-checkbox border size="mini" v-model="usedatasource"></el-checkbox>
+          </el-form-item>
+        </el-form>
+
+        <el-form v-if="usedatasource" ref="form" label-width="60px" size="mini">
+          <el-form-item label="数据源:" label-width="100px">
+            <el-input placeholder="填写数据总线的key" v-model="componentInfo.datasourcekey"></el-input>
+          </el-form-item>
+        </el-form>
+        <el-table v-else :data="componentInfo.data" style="width: 100%">
           <el-table-column align="center" placeholder="请输入名称" label="名称">
             <template slot-scope="scope">
               <el-input v-model="scope.row.name"></el-input>
@@ -78,6 +89,7 @@
         type: [Object],
         default () {
           return {
+            datasourcekey: '',
             data: [],
             info: {}
           }
@@ -86,6 +98,7 @@
     },
     data () {
       return {
+        usedatasource: false,
         options: [{
           value: 'single',
           label: '单条滚动'
@@ -101,6 +114,14 @@
       }
     },
     watch: {
+      'usedatasource': {
+        handler (v) {
+          if (!v) {
+            this.componentInfo.datasourcekey = ''
+          }
+        },
+        immediate: true
+      },
       'componentInfo.data': {
         handler (v) {
           if (v && v.length != 0) {

@@ -23,6 +23,13 @@
       }
     },
     props: {
+      datasourcekey: {
+        type: String,
+        default: '',
+        editor: {
+          ignore: true
+        }
+      },
       data: {
         type: Array,
         default () {
@@ -75,9 +82,19 @@
     },
     computed: {
       config () {
+        var data = this.data
+        if (this.datasourcekey) {
+          var dataStr = this.dataHubGet && this.dataHubGet(this.datasourcekey)
+          try {
+            data = JSON.parse(dataStr)
+          } catch (e) {
+            console.log('error Scroll-Ranking', '获取数据解析json对象异常')
+            data = []
+          }
+        }
         return {
           ...this.info,
-          data: this.data,
+          data: data,
         }
       }
     },

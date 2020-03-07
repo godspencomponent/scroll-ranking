@@ -101,6 +101,7 @@
     data () {
       return {
         componentProps: {
+          datasourcekey: '',
           data: [
             {
               name: '周口',
