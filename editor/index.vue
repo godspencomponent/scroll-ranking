@@ -32,7 +32,7 @@
           <el-row>
             <el-col :span="12">
               <el-form-item label="轮播方式:" label-width="100px">
-                <el-select v-model="componentInfo.carousel" placeholder="请选择">
+                <el-select v-model="componentInfo.info.carousel" placeholder="请选择">
                   <el-option
                     v-for="item in options"
                     :key="item.value"
@@ -44,7 +44,7 @@
             </el-col>
             <el-col :span="12">
               <el-form-item label="字体颜色:" label-width="150px">
-                <el-color-picker v-model="componentInfo.fontColor" show-alpha></el-color-picker>
+                <el-color-picker v-model="componentInfo.info.fontColor" show-alpha></el-color-picker>
               </el-form-item>
             </el-col>
           </el-row>
@@ -78,12 +78,8 @@
         type: [Object],
         default () {
           return {
-            rowNum: 3,
-            waitTime: 2000,
-            carousel: 'single',
-            fontColor: '#000',
-            unit: null,
-            sort: true
+            data: [],
+            info: {}
           }
         }
       }

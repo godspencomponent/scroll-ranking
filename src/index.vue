@@ -4,7 +4,7 @@
       v-if="componentName"
       :is="componentName"
       :config="config"
-      :style="{color: fontColor}"
+      :style="{color: info.fontColor}"
     ></component>
   </div>
 </template>
@@ -49,19 +49,18 @@
           ignore: true
         }
       },
-      fontColor: {
-        type: String,
-        default: '#000',
-        editor: {
-          ignore: true
-        }
-      },
-      sort: {
-        type: Boolean,
-        default: true,
-        editor: {
-          ignore: true
-        }
+      info: {
+        type: Object,
+        default () {
+          return {
+            rowNum: 3,
+            waitTime: 2000,
+            carousel: 'single',
+            unit: '',
+            sort: true,
+            fontColor: '#000'
+          }
+        },
       }
     },
     mounted: async function () {
@@ -74,13 +73,8 @@
     computed: {
       config () {
         return {
+          ...this.info,
           data: this.data,
-          rowNum: this.rowNum,
-          waitTime: this.waitTime,
-          carousel: this.carousel,
-          fontColor: this.fontColor,
-          unit: this.unit,
-          sort: this.sort,
         }
       }
     },
