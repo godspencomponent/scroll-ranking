@@ -10,7 +10,10 @@
 </template>
 
 <script type="text/ecmascript-6">
-  import {VueExtend, Util} from 'godspen-lib'
+  import {VueExtend} from 'godspen-lib'
+  import {
+    scrollRankingBoard,
+  } from '@jiaminghi/data-view'
   export default {
     mixins: [VueExtend.mixin],
     name: 'scroll-ranking',
@@ -75,10 +78,8 @@
     },
     mounted: async function () {
       // 纯属演示异步加载js资源，与本组件无关； loadJs返回一个promise实例 可以用async 或者 then 来处理回调
-      await Util.loadJs('https://unpkg.com/@jiaminghi/data-view@2.7.3/dist/datav.min.vue.js')
-      setTimeout((e) => {
-        this.componentName = 'DvScrollRankingBoard'
-      }, 100)
+      window.Vue.use(scrollRankingBoard)
+      this.componentName = 'DvScrollRankingBoard'
     },
     computed: {
       config () {
